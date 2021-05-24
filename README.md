@@ -17,4 +17,7 @@ And if finally no number can mod the number and get 0, it's the prime we're look
 If the prime is detected, it prints out the latest order of prime + 1 before appending it to [prime.txt](prime.txt)
 That's it! notthing more.
 
-I still don't know why ./prime.txt can't be read as a normal file, I'll have to check later.
+# Extra Notes
+How ever, due to lack of knowledge or the languege capability, I can not find a way to read a file in small chunks so it's not eating up the RAM. However, I'm aware that python can read files in lines without buffering the whole file to RAM. Might capitalize it later.
+
+Memory usage of this program is in prime time notation as it's only store prime numbers.
