@@ -12,9 +12,9 @@ The program creates 2 files:
   2. [prime.txt](prime.txt) to store very prime number it found.
 These two works in conjuction to help save time checking prime factorization.
 It then read both of them and start to check by increasing number in [number.txt](number.txt) by one and for every number in [prime.txt](prime.txt) that's doesn't exceed `sqrt(number)`
-(a least that's the logic, and it turned out that I didn't do that.). If the number happened to be moded by any number and give 0, the whole sequences is skipped.
-And if finally no number can mod the number and get 0, it's the prime we're looking for.
-If the prime is detected, it prints out the latest order of prime + 1 before appending it to [prime.txt](prime.txt)
+(a least that's the logic, and it turned out that I didn't do that.). If the number happened to be `moded by any number and give 0`, the whole sequences is skipped.
+And if finally no number can `mod number and get 0`, it's the prime we're looking for.
+If the prime is detected, it prints out `the latest order of prime + 1` before appending it to [prime.txt](prime.txt)
 That's it! notthing more.
 
 # Extra Notes
