@@ -20,4 +20,4 @@ That's it! notthing more.
 # Extra Notes
 How ever, due to lack of knowledge or the languege capability, I can not find a way to read a file in small chunks so it's not eating up the RAM. However, I'm aware that python can read files in lines without buffering the whole file to RAM. Might capitalize it later.
 
-Memory usage of this program is in prime time notation as it's only store prime numbers.
+Memory usage of this program is in prime time notation as it's only stores prime numbers.
