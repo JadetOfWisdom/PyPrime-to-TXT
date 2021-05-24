@@ -18,12 +18,12 @@ def prime_num(x):
     f = open(fp,'r')
     primes = list(f)
     #i = 0
-    for i in range(int(math.sqrt(x))):
-        if i >= len(primes):
-            break
-        y = int(primes[i])
-        if y >= x or x % y == 0:
+    for i in primes:
+        y = int(i)
+        if x % y == 0:
             is_prime = False
+            break
+        if y >= int(math.sqrt(x)):
             break
 
     if is_prime:
