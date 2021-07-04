@@ -8,8 +8,10 @@
 # only the first 512 numbers will stay in RAMs throughout the whole life of the program.
 # The program will write 64 numbers at a time, not including the 
 import math
+
 fn = "number.txt"
 fp = "prime.txt"
+f = None
 #f = open(fn,"r")
 def prime_num(x):
     global f,fn,fp
@@ -37,15 +39,18 @@ def prime_num(x):
     f.close()
 # end prime_num(x)
 
-try:
-    f = open(fp,'r')
-except FileNotFoundError:
-    f = open(fp,'w')
-    f.write("2\n")
-    f.close()
-# end read fp
+def fillPrime():
+    global f
+    try:
+        try:
+            f = open(fp,'r')
+        except FileNotFoundError:
+            f = open(fp,'w')
+            f.write("2\n")
+            f.close()
+        # end read fp
 
-try:
+        try:
             k = open(fp,'r')
             pm = list(k)
             k.close()
@@ -54,25 +59,25 @@ try:
             p = int(pm[-1]) if ( int(pm[-1]) > int(pm[-2]) ) else int(pm[-2])
             del pm
             # print(p)
-    f = open(fn, "r")
-    s = f.read()
-    if s == "":
-        s = "1"
+            f = open(fn, "r")
+            s = f.read()
+            if s == "":
+                s = "1"
             if(int(s) < p):
                 s = p
-    num=int(s)
+            num=int(s)
             del p, s
 
-    print(f'number = {num}')
-    while(1):
-        num += 1
-        prime_num(num)
+            print(f'number = {num}')
+            while(1):
+                num += 1
+                prime_num(num)
 
-except FileNotFoundError:
-    f = open(fn,"w")
-    f.write("1\n")
-    print('Written')
-#end read fn
+        except FileNotFoundError:
+            f = open(fn,"w")
+            f.write("1\n")
+            print('Written')
+        #end read fn
     except KeyboardInterrupt:
         print("\nkey board interrupt.")
         if(not f.closed):
