@@ -61,8 +61,15 @@ except FileNotFoundError:
     f.write("1\n")
     print('Written')
 #end read fn
-
-
+    except KeyboardInterrupt:
+        print("\nkey board interrupt.")
+        if(not f.closed):
+            print(f.name,"is being open, flushing file buffer (",int.from_bytes(f.buffer.readline(),'big'),")")
+            f.flush()
+            print("closing file")
+            f.close()
+        print("stop")
+        # exit()
 
 modes = [
     ('f','create/fill prime.txt'),
