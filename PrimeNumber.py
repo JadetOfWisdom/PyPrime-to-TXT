@@ -64,3 +64,26 @@ except FileNotFoundError:
 
 
 
+modes = [
+    ('f','create/fill prime.txt'),
+    ('d','create/fill prime_diff.txt')
+]
+
+while(1):
+    try:
+        print('\n----------------------------\nplease select operation:\n')
+        for m in modes:
+            print(m[0],":",m[1])
+        mode = input()
+        print()
+        if(mode == 'f'):
+            fillPrime()
+        elif (mode=='d'):
+            print('this mode is not ready')
+        elif (mode=='x' or mode=='q'):
+            print('exit')
+            exit()
+        else:
+            print("invalid input.")
+    except KeyboardInterrupt:
+        print("\nto exit, please enter 'x' or 'q'\n")
