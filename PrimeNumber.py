@@ -46,11 +46,23 @@ except FileNotFoundError:
 # end read fp
 
 try:
+            k = open(fp,'r')
+            pm = list(k)
+            k.close()
+            del k
+            # p = pm[-1]
+            p = int(pm[-1]) if ( int(pm[-1]) > int(pm[-2]) ) else int(pm[-2])
+            del pm
+            # print(p)
     f = open(fn, "r")
     s = f.read()
     if s == "":
         s = "1"
+            if(int(s) < p):
+                s = p
     num=int(s)
+            del p, s
+
     print(f'number = {num}')
     while(1):
         num += 1
